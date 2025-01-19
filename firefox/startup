@@ -1,0 +1,12 @@
+#!/bin/sh
+while true
+do
+    if ! pgrep Xvnc >/dev/null
+    then
+        rm -f /tmp/.X0-lock
+        rm -f /tmp/.X11-unix/X0
+        vncserver :0
+    fi
+
+    sleep 10
+done
